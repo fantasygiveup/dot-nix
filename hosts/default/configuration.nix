@@ -316,7 +316,6 @@
     rsync
     shellcheck
     signal-desktop
-    slack
     strace
     stylua
     tailwindcss-language-server
