@@ -30,6 +30,8 @@
     pkgs.devcontainer
     pkgs.emacs-gtk
     pkgs.emmet-ls
+    pkgs.espeak # speach-module for speechd
+    pkgs.foliate # awz3 viewer
     pkgs.gnome.dconf-editor
     pkgs.gnome.gnome-tweaks
     pkgs.gnomeExtensions.dash-to-dock
@@ -40,6 +42,7 @@
     pkgs.nixfmt-classic
     pkgs.obsidian
     pkgs.papirus-icon-theme
+    pkgs.speechd # speech-dispatcher for foliate
     pkgs.texliveFull
     pkgs.xclip
   ];
