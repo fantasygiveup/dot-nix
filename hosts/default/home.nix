@@ -36,6 +36,7 @@
     pkgs.gnome.gnome-tweaks
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.unite # merge title with gnome top dock
+    pkgs.libnotify # provides notify-send
     pkgs.libtool # required by emacs
     pkgs.libvterm # required by emacs
     pkgs.nixd
