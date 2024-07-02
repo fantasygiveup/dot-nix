@@ -39,10 +39,12 @@
     pkgs.libnotify # provides notify-send
     pkgs.libtool # required by emacs
     pkgs.libvterm # required by emacs
+    pkgs.luajit # lua interpreter
     pkgs.nixd
     pkgs.nixfmt-classic
     pkgs.obsidian
     pkgs.papirus-icon-theme
+    pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.texliveFull
     pkgs.xclip
