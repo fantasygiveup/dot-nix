@@ -24,11 +24,9 @@
     (pkgs.callPackage ./fdir.nix { })
     pkgs-unstable.bemenu
     pkgs-unstable.neovim
-    pkgs-unstable.wezterm
     pkgs.cliphist
     pkgs.clipnotify
     pkgs.devcontainer
-    pkgs.emacs-gtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.foliate # awz3 viewer
@@ -37,12 +35,9 @@
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.unite # merge title with gnome top dock
     pkgs.libnotify # provides notify-send
-    pkgs.libtool # required by emacs
-    pkgs.libvterm # required by emacs
     pkgs.luajit # lua interpreter
     pkgs.nixd
     pkgs.nixfmt-classic
-    pkgs.obsidian
     pkgs.papirus-icon-theme
     pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
     pkgs.speechd # speech-dispatcher for foliate
