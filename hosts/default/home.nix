@@ -48,6 +48,7 @@
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.texliveFull
     pkgs.xclip
+    pkgs.zotero # citation tool
   ];
 
   gtk = {
