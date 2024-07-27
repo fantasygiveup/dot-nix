@@ -273,7 +273,6 @@
     go
     golangci-lint # golang linter package
     golines # split long code lines in golang
-    google-chrome
     gopls # golang language server protocol
     gotools # set of go language code tools
     graphviz
