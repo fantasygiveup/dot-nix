@@ -308,6 +308,7 @@
     pixz
     pigz
     pbzip2 # parallel (de-)compression
+    p7zip
     pkg-config
     psmisc # provides: fuser, killall, pstree, peekfd
     python3
@@ -360,18 +361,18 @@
       ohMyZsh = {
         enable = true;
         plugins = [
-          "git"
-          "kubectl"
-          "history"
+          "docker-compose"
+          "fzf"
           "gcloud"
+          "git"
+          "history"
+          "kubectl"
           "mix"
           "npm"
-          "yarn"
-          "rust"
-          "rsync"
           "postgres"
-          "fzf"
-          "docker-compose"
+          "rsync"
+          "rust"
+          "yarn"
         ];
         theme = "intheloop";
       };
