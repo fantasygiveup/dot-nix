@@ -28,6 +28,7 @@
     pkgs-unstable.bemenu
     pkgs-unstable.google-chrome
     pkgs-unstable.neovim
+    pkgs-unstable.pistol # file previewer written in go
     pkgs-unstable.wezterm
     pkgs.cliphist
     pkgs.clipnotify
