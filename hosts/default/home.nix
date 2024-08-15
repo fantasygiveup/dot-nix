@@ -28,6 +28,7 @@
     pkgs-unstable.bemenu
     pkgs-unstable.google-chrome
     pkgs-unstable.neovim
+    pkgs-unstable.wezterm
     pkgs.cliphist
     pkgs.clipnotify
     pkgs.devcontainer
