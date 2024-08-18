@@ -248,7 +248,6 @@
     automake
     bc
     bloomrpc
-    clang-tools
     cmake
     delve # golang debugger
     discord

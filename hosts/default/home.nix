@@ -30,6 +30,8 @@
     pkgs-unstable.neovim
     pkgs-unstable.pistol # file previewer written in go
     pkgs-unstable.wezterm
+    pkgs.ccls # Language Server Protocol based on Clang
+    pkgs.clang-tools
     pkgs.cliphist
     pkgs.clipnotify
     pkgs.devcontainer
