@@ -333,7 +333,6 @@
     wl-clipboard
     xorg.xhost # exec `xhost +` to share clipboard state between docker instance and the host
     yarn
-    yarr # rss browser reader
     yq # jq but for yaml
     yt-dlp
     zip
