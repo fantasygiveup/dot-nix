@@ -314,7 +314,6 @@
     ripgrep
     rsync
     shellcheck
-    signal-desktop
     strace
     stylua
     tailwindcss-language-server

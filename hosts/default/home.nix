@@ -17,9 +17,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w" # required by viber
-  ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -29,6 +26,7 @@
     pkgs-unstable.google-chrome
     pkgs-unstable.neovim
     pkgs-unstable.pistol # file previewer written in go
+    pkgs-unstable.signal-desktop
     pkgs-unstable.wezterm
     pkgs.ccls # Language Server Protocol based on Clang
     pkgs.clang-tools
@@ -51,7 +49,6 @@
     pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.texliveFull
-    pkgs.viber
     pkgs.xclip
     pkgs.zotero # citation tool
   ];
