@@ -33,6 +33,7 @@
     pkgs.cliphist
     pkgs.clipnotify
     pkgs.devcontainer
+    pkgs.emacs-gtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.foliate # awz3 viewer
@@ -42,6 +43,8 @@
     pkgs.gnomeExtensions.unite # merge title with gnome top dock
     pkgs.imv # image viewer
     pkgs.libnotify # provides notify-send
+    pkgs.libtool # required by emacs
+    pkgs.libvterm # required by emacs
     pkgs.luajit # lua interpreter
     pkgs.nixd
     pkgs.nixfmt-classic
