@@ -67,6 +67,7 @@
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
+    pkgs.mpv
     pkgs.nixd
     pkgs.nixfmt-classic
     pkgs.nodePackages.eslint # javascript linter
