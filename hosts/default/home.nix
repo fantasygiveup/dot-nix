@@ -17,42 +17,86 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w" # required for viber
+  ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     (pkgs.callPackage ./fdir.nix { })
-    pkgs-unstable.bemenu
-    pkgs-unstable.google-chrome
-    pkgs-unstable.neovim
-    pkgs-unstable.pistol # file previewer written in go
+    (pkgs.google-cloud-sdk.withExtraComponents
+      [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     pkgs-unstable.signal-desktop
-    pkgs-unstable.wezterm
+    pkgs.alacritty # terminal of choice
+    pkgs.anki
+    pkgs.ansible
+    pkgs.bemenu
     pkgs.ccls # Language Server Protocol based on Clang
     pkgs.clang-tools
     pkgs.cliphist
     pkgs.clipnotify
+    pkgs.cmake
+    pkgs.delve # golang debugger
     pkgs.devcontainer
-    pkgs.emacs-gtk
+    pkgs.docker-compose
+    pkgs.elixir
+    pkgs.elixir-ls
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
+    pkgs.filezilla
     pkgs.foliate # awz3 viewer
+    pkgs.gimp
     pkgs.gnome.dconf-editor
     pkgs.gnome.gnome-tweaks
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.unite # merge title with gnome top dock
+    pkgs.go
+    pkgs.golangci-lint # golang linter package
+    pkgs.golines # split long code lines in golang
+    pkgs.google-chrome
+    pkgs.gopls # golang language server protocol
+    pkgs.gotools # set of go language code tools
+    pkgs.graphviz
     pkgs.imv # image viewer
+    pkgs.inkscape
+    pkgs.krita
+    pkgs.lazygit
     pkgs.libnotify # provides notify-send
-    pkgs.libtool # required by emacs
-    pkgs.libvterm # required by emacs
+    pkgs.libxml2 # xmllint
+    pkgs.lua-language-server
     pkgs.luajit # lua interpreter
     pkgs.nixd
     pkgs.nixfmt-classic
+    pkgs.nodePackages.eslint # javascript linter
+    pkgs.nodePackages.prettier # javascript formatter
+    pkgs.nodePackages.pyright # python code formatter
+    pkgs.nodePackages.typescript-language-server # typescript language server protocol
+    pkgs.nodejs
+    pkgs.obs-studio # record camera and desktop
     pkgs.papirus-icon-theme
+    pkgs.pistol # file previewer written in go
+    pkgs.pkgs.pandoc # convert/generate documents in different formats
     pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
     pkgs.speechd # speech-dispatcher for foliate
+    pkgs.stylua
+    pkgs.tailwindcss-language-server
+    pkgs.teams-for-linux
     pkgs.texliveFull
+    pkgs.thunderbird
+    pkgs.tmux
+    pkgs.typescript
+    pkgs.vagrant
+    pkgs.viber
+    pkgs.vscode-langservers-extracted # cssls
+    pkgs.wezterm
+    pkgs.wireshark
+    pkgs.wl-clipboard
     pkgs.xclip
+    pkgs.xorg.xhost # exec `xhost +` to share clipboard state between docker instance and the host
+    pkgs.yarn
+    pkgs.yt-dlp
+    pkgs.zk # zettelkasten cli
     pkgs.zotero # citation tool
   ];
 
@@ -138,7 +182,7 @@
   #  /etc/profiles/per-user/idanko/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

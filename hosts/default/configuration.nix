@@ -240,102 +240,50 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (google-cloud-sdk.withExtraComponents
-      [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    alacritty # terminal of choice
-    anki
-    ansible
     automake
     bc
-    bloomrpc
-    cmake
-    delve # golang debugger
-    discord
     dmidecode
     dnsutils
-    docker-compose
     dos2unix # Convert between DOS and Unix line endings
-    elixir
-    elixir-ls
     ethtool
     fd
     file
-    filezilla
-    firefox
     fzf
     gdb
     gettext
-    gimp
     git
     gnat # core development tools: compilers, linkers, etc.
     gnumake
-    go
-    golangci-lint # golang linter package
-    golines # split long code lines in golang
-    gopls # golang language server protocol
-    gotools # set of go language code tools
-    graphviz
     hdparm
     htop
-    inkscape
     inotify-tools # required by elixir mix
     iperf
     ispell
     jq # json parser
-    krita
-    kubectl
-    lazygit
-    lf
-    libreoffice
-    libxml2 # xmllint
     lshw
     lsof
-    lua-language-server
-    mpv
     neofetch
+    neovim
     netcat
     nmap
-    nodePackages.eslint # javascript linter
-    nodePackages.prettier # javascript formatter
-    nodePackages.pyright # python code formatter
-    nodePackages.typescript-language-server # typescript language server protocol
-    nodejs
-    obs-studio # record camera and desktop
     openssl
-    pandoc # convert/generate documents in different formats
-    pciutils
-    pixz
-    pigz
-    pbzip2 # parallel (de-)compression
     p7zip
+    pbzip2 # parallel (de-)compression
+    pciutils
+    pigz
+    pixz
     pkg-config
     psmisc # provides: fuser, killall, pstree, peekfd
     python3
     ripgrep
     rsync
-    shellcheck
-    strace
-    stylua
-    tailwindcss-language-server
-    teams-for-linux
-    thunderbird
-    tmux
     tree
-    typescript
     unzip
     usbutils
-    vagrant
-    vscode-langservers-extracted # cssls
     wget
     whois
-    wireshark
-    wl-clipboard
-    xorg.xhost # exec `xhost +` to share clipboard state between docker instance and the host
-    yarn
     yq # jq but for yaml
-    yt-dlp
     zip
-    zk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
