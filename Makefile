@@ -1,7 +1,7 @@
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 project_dir := $(patsubst %/,%,$(dir $(mkfile_path)))
 
-purge:
+clean:
 	sudo nix-collect-garbage -d
 	nix-collect-garbage -d
 	sudo /run/current-system/bin/switch-to-configuration boot
