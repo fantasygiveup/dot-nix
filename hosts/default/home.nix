@@ -62,6 +62,7 @@
     pkgs.inkscape
     pkgs.krita
     pkgs.lazygit
+    pkgs.lf # terminal file manager
     pkgs.libnotify # provides notify-send
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
