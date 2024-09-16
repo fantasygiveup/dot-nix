@@ -28,6 +28,7 @@
     (pkgs.google-cloud-sdk.withExtraComponents
       [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     pkgs-unstable.signal-desktop
+    pkgs-unstable.teams-for-linux
     pkgs.alacritty # terminal of choice
     pkgs.anki
     pkgs.ansible
@@ -42,6 +43,7 @@
     pkgs.docker-compose
     pkgs.elixir
     pkgs.elixir-ls
+    pkgs.emacs-gtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
@@ -61,13 +63,18 @@
     pkgs.imv # image viewer
     pkgs.inkscape
     pkgs.krita
+    pkgs.kubectl
     pkgs.lazygit
     pkgs.lf # terminal file manager
     pkgs.libnotify # provides notify-send
+    pkgs.libreoffice-fresh # ms office, but better
+    pkgs.libtool # required by emacs
+    pkgs.libvterm # required by emacs
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
     pkgs.mpv
+    pkgs.ngrok # route tcp from the public internet url to your host machine
     pkgs.nixd
     pkgs.nixfmt-classic
     pkgs.nodePackages.eslint # javascript linter
@@ -79,11 +86,11 @@
     pkgs.papirus-icon-theme
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
+    pkgs.qbittorrent
     pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
     pkgs.tailwindcss-language-server
-    pkgs.teams-for-linux
     pkgs.texliveFull
     pkgs.thunderbird
     pkgs.tmux
