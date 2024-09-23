@@ -91,6 +91,7 @@
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
     pkgs.tailwindcss-language-server
+    pkgs.terraform
     pkgs.texliveFull
     pkgs.thunderbird
     pkgs.tmux
