@@ -92,6 +92,7 @@
     pkgs.stylua
     pkgs.tailwindcss-language-server
     pkgs.terraform
+    pkgs.terraform-ls
     pkgs.texliveFull
     pkgs.thunderbird
     pkgs.tmux
