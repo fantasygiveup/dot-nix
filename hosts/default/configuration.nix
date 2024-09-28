@@ -263,7 +263,6 @@
     lshw
     lsof
     neofetch
-    neovim
     netcat
     nmap
     openssl

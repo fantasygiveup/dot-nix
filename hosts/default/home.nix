@@ -27,8 +27,11 @@
     (pkgs.callPackage ./fdir.nix { })
     (pkgs.google-cloud-sdk.withExtraComponents
       [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    pkgs-unstable.mpv
+    pkgs-unstable.neovim
     pkgs-unstable.signal-desktop
     pkgs-unstable.teams-for-linux
+    pkgs-unstable.yt-dlp
     pkgs.alacritty # terminal of choice
     pkgs.anki
     pkgs.ansible
@@ -43,7 +46,6 @@
     pkgs.docker-compose
     pkgs.elixir
     pkgs.elixir-ls
-    pkgs.emacs-gtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
@@ -68,12 +70,9 @@
     pkgs.lf # terminal file manager
     pkgs.libnotify # provides notify-send
     pkgs.libreoffice-fresh # ms office, but better
-    pkgs.libtool # required by emacs
-    pkgs.libvterm # required by emacs
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
-    pkgs.mpv
     pkgs.ngrok # route tcp from the public internet url to your host machine
     pkgs.nixd
     pkgs.nixfmt-classic
@@ -105,7 +104,6 @@
     pkgs.xclip
     pkgs.xorg.xhost # exec `xhost +` to share clipboard state between docker instance and the host
     pkgs.yarn
-    pkgs.yt-dlp
     pkgs.zk # zettelkasten cli
     pkgs.zotero # citation tool
   ];
