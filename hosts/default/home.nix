@@ -102,7 +102,7 @@
     pkgs.wireshark
     pkgs.wl-clipboard
     pkgs.xclip
-    pkgs.xorg.xhost # exec `xhost +` to share clipboard state between docker instance and the host
+    pkgs.xorg.xhost # execute `xhost +` to share clipboard between a docker container and host machine
     pkgs.yarn
     pkgs.zk # zettelkasten cli
     pkgs.zotero # citation tool
