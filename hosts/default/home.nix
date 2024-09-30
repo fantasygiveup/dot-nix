@@ -86,7 +86,7 @@
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
     pkgs.qbittorrent
-    pkgs.rlwrap # wraps a unix command by allowing to navigate via tty's shortcuts
+    pkgs.rlwrap # wrap a command to make stdin interactive
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
     pkgs.tailwindcss-language-server
