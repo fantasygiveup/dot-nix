@@ -73,6 +73,7 @@
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
+    pkgs.meld # diff folders and files
     pkgs.ngrok # route tcp from the public internet url to your host machine
     pkgs.nixd
     pkgs.nixfmt-classic
