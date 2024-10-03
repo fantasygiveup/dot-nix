@@ -27,7 +27,6 @@
     (pkgs.callPackage ./fdir.nix { })
     (pkgs.google-cloud-sdk.withExtraComponents
       [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    pkgs-unstable.mpv
     pkgs-unstable.neovim
     pkgs-unstable.signal-desktop
     pkgs-unstable.teams-for-linux
@@ -74,6 +73,7 @@
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
     pkgs.meld # diff folders and files
+    pkgs.mpv
     pkgs.ngrok # route tcp from the public internet url to your host machine
     pkgs.nixd
     pkgs.nixfmt-classic
@@ -91,7 +91,6 @@
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
     pkgs.tailwindcss-language-server
-    pkgs.telegram-desktop
     pkgs.terraform
     pkgs.terraform-ls
     pkgs.texliveFull
