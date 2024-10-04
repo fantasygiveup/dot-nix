@@ -48,6 +48,7 @@
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
+    pkgs.firefox
     pkgs.foliate # awz3 viewer
     pkgs.gimp
     pkgs.gnome.dconf-editor
