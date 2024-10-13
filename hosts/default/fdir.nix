@@ -7,15 +7,15 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "illia-danko";
     repo = pname;
-    rev = "master";
-    sha256 = "mCXqNB40DML2/XG7URqNGcWGzXwA5J2hSBOPWwkTVa8=";
+    rev = "main";
+    sha256 = "ZKjI3UEETcYlFhbT2VmkDp5H6OdVNaAcz7utX40F5uM=";
   };
 
   vendorHash = null;
   doCheck = false;
 
   meta = with lib; {
-    description = "Dymmy search project folders";
+    description = "The Dammy search project folders";
     homepage = "https://github.com/illia-danko/${pname}";
     license = licenses.mit;
     platforms = platforms.unix;
