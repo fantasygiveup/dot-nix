@@ -27,6 +27,8 @@
     (pkgs.callPackage ./fdir.nix { })
     (pkgs.google-cloud-sdk.withExtraComponents
       [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    pkgs-unstable.elixir
+    pkgs-unstable.elixir-ls
     pkgs-unstable.neovim
     pkgs-unstable.signal-desktop
     pkgs-unstable.teams-for-linux
@@ -43,8 +45,6 @@
     pkgs.delve # golang debugger
     pkgs.devcontainer
     pkgs.docker-compose
-    pkgs.elixir
-    pkgs.elixir-ls
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
