@@ -101,6 +101,7 @@
     pkgs.vagrant
     pkgs.viber
     pkgs.vscode-langservers-extracted # cssls
+    pkgs.wezterm
     pkgs.wireshark
     pkgs.wl-clipboard
     pkgs.xclip
