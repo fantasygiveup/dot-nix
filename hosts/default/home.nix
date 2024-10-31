@@ -44,6 +44,7 @@
     pkgs.cmake
     pkgs.delve # golang debugger
     pkgs.devcontainer
+    pkgs.dive
     pkgs.docker-compose
     pkgs.emacs-gtk
     pkgs.emmet-ls
