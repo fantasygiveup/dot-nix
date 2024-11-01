@@ -46,7 +46,6 @@
     pkgs.devcontainer
     pkgs.dive
     pkgs.docker-compose
-    pkgs.emacs-gtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
@@ -72,8 +71,6 @@
     pkgs.lf # terminal file manager
     pkgs.libnotify # provides notify-send
     pkgs.libreoffice-fresh # ms office, but better
-    pkgs.libtool # required by emacs
-    pkgs.libvterm # required by emacs
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
