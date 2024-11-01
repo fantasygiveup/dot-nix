@@ -175,6 +175,14 @@
 
       "org/gnome/shell" = {
         enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" ];
+        last-selected-power-profile = "performance";
+      };
+      "org/gnome/settings-daemon/plugins/power" = {
+        sleep-inactive-ac-timeout = 900; # 15min
+        sleep-inactive-ac-type = "suspend";
+      };
+      "org/gnome/desktop/session" = {
+        idle-delay = (lib.gvariant.mkUint32 300); # 5min
       };
       "org/gnome/shell/extensions/dash-to-dock" = {
         apply-custom-theme = false;
