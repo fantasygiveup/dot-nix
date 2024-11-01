@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -42,6 +42,7 @@
     pkgs.cliphist
     pkgs.clipnotify
     pkgs.cmake
+    pkgs.dconf
     pkgs.delve # golang debugger
     pkgs.devcontainer
     pkgs.dive
@@ -117,6 +118,74 @@
     iconTheme = {
       name = "Numix-Square";
       package = pkgs.numix-icon-theme-square;
+    };
+  };
+
+  # NOTE: to see changes using gnome-tweaks (or any other method) use `dconf watch /` command.
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        text-scaling-factor = 1.25;
+        font-name = "Ubuntu Medium 11";
+        document-font-name = "Ubuntu Regular 11";
+        monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
+        font-antialiasing = "rgba";
+        font-hinting = "slight";
+        clock-show-weekday = true;
+      };
+      "org/gnome/desktop/input-sources" = {
+        sources = [
+          (lib.gvariant.mkTuple [ "xkb" "us" ])
+          (lib.gvariant.mkTuple [ "xkb" "ua" ])
+        ];
+        xkb-options =
+          [ "terminate:ctrl_alt_bksp" "caps:ctrl_modifier" ]; # use caps as ctrl
+      };
+      "org/gnome/desktop/wm/keybindings" = { show-desktop = [ "<Super>d" ]; };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
+        {
+          binding = "<Control><Alt>h";
+          command = "bemenu-commander cliphist";
+          name = "Clipboard History";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
+        {
+          binding = "<Control><Alt>u";
+          command = "bemenu-commander ref";
+          name = "Ref";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" =
+        {
+          binding = "<Control><Alt>i";
+          command = "bemenu-commander ref-data";
+          name = "Ref-Data";
+        };
+      "org/gnome/settings-daemon/plugins/color" = {
+        night-light-enabled = true;
+        night-light-temperature = (lib.gvariant.mkUint32 3700);
+      };
+
+      "org/gnome/shell" = {
+        enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" ];
+      };
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        apply-custom-theme = false;
+        dock-position = "BOTTOM";
+        transparency-mode = "FIXED";
+        background-opacity = 1.0;
+        height-fraction = 1.0;
+        dash-max-icon-size = 36;
+        extend-height = true;
+        show-apps-always-in-the-edge = false;
+        dock-fixed = true;
+        custom-theme-shrink = true;
+        custom-background-color = true;
+        isolate-workspaces = true;
+        show-apps-at-top = true;
+        background-color = "rgb(0,0,0)";
+        running-indicator-style = "DOTS";
+      };
     };
   };
 
