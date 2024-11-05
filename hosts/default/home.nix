@@ -45,7 +45,7 @@
     pkgs.dconf
     pkgs.delve # golang debugger
     pkgs.devcontainer
-    pkgs.dive
+    pkgs.dive # inspect docker images
     pkgs.docker-compose
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
@@ -104,6 +104,7 @@
     pkgs.vagrant
     pkgs.viber
     pkgs.vscode-langservers-extracted # cssls
+    pkgs.wezterm
     pkgs.wireshark
     pkgs.wl-clipboard
     pkgs.xclip
