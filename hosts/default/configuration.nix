@@ -329,6 +329,9 @@
     users = { "idanko" = import ./home.nix; };
   };
 
+  # Disable system auto upgrade (default).
+  system.autoUpgrade.enable = false;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
