@@ -30,6 +30,7 @@
     pkgs-unstable.elixir
     pkgs-unstable.elixir-ls
     pkgs-unstable.neovim
+    pkgs-unstable.qbittorrent
     pkgs-unstable.signal-desktop
     pkgs-unstable.teams-for-linux
     pkgs-unstable.yt-dlp
@@ -90,7 +91,6 @@
     pkgs.papirus-icon-theme
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
-    pkgs.qbittorrent
     pkgs.rlwrap # wrap a command to make stdin interactive
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
