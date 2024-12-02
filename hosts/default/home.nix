@@ -38,6 +38,7 @@
     pkgs.anki
     pkgs.ansible
     pkgs.bemenu
+    pkgs.bloomrpc
     pkgs.ccls # Language Server Protocol based on Clang
     pkgs.clang-tools
     pkgs.cliphist
