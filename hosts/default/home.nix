@@ -89,6 +89,7 @@
     pkgs.nodePackages.typescript-language-server # typescript language server protocol
     pkgs.nodejs
     pkgs.obs-studio # record camera and desktop
+    pkgs.opera
     pkgs.papirus-icon-theme
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
