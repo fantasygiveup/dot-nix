@@ -138,6 +138,7 @@
         font-antialiasing = "rgba";
         font-hinting = "slight";
         clock-show-weekday = true;
+        enable-hot-corners = false; # disable top-left hot corner.
       };
       "org/gnome/desktop/input-sources" = {
         sources = [
