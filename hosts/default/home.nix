@@ -47,6 +47,7 @@
     pkgs.dconf
     pkgs.delve # golang debugger
     pkgs.devcontainer
+    pkgs.discord
     pkgs.dive # inspect docker images
     pkgs.docker-compose
     pkgs.emmet-ls
