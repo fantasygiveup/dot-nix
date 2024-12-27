@@ -78,6 +78,7 @@
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
+    pkgs.prismlauncher # minecraft launcher
     pkgs.meld # diff folders and files
     pkgs.memtester # memory test
     pkgs.mpv
