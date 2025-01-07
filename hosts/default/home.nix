@@ -78,7 +78,6 @@
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
-    pkgs.prismlauncher # minecraft launcher
     pkgs.meld # diff folders and files
     pkgs.memtester # memory test
     pkgs.mpv
@@ -95,7 +94,9 @@
     pkgs.papirus-icon-theme
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
+    pkgs.prismlauncher # minecraft launcher
     pkgs.rlwrap # wrap a command to make stdin interactive
+    pkgs.slack
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
     pkgs.tailwindcss-language-server
