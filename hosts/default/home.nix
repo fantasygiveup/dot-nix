@@ -109,6 +109,7 @@
     pkgs.typescript
     pkgs.vagrant
     pkgs.viber
+    pkgs.vlc
     pkgs.vscode-langservers-extracted # cssls
     pkgs.wezterm
     pkgs.wireshark
