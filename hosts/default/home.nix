@@ -96,6 +96,7 @@
     pkgs.pkgs.pandoc # convert/generate documents in different formats
     pkgs.prismlauncher # minecraft launcher
     pkgs.rlwrap # wrap a command to make stdin interactive
+    pkgs.sbcl
     pkgs.slack
     pkgs.speechd # speech-dispatcher for foliate
     pkgs.stylua
