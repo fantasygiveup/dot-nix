@@ -95,6 +95,7 @@
     pkgs.obs-studio # record camera and desktop
     pkgs.opera
     pkgs.papirus-icon-theme
+    pkgs.pgformatter
     pkgs.pistol # file previewer written in go
     pkgs.pkgs.pandoc # convert/generate documents in different formats
     pkgs.prismlauncher # minecraft launcher
@@ -118,8 +119,10 @@
     pkgs.wezterm
     pkgs.wireshark
     pkgs.wl-clipboard
+    pkgs.xcape
     pkgs.xclip
     pkgs.xorg.xhost # execute `xhost +` to share clipboard between a docker container and host machine
+    pkgs.xorg.xmodmap
     pkgs.yarn
     pkgs.zk # zettelkasten cli
     pkgs.zotero # citation tool

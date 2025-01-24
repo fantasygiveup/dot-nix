@@ -331,6 +331,7 @@
 
   # Disable system auto upgrade (default).
   system.autoUpgrade.enable = false;
+  programs.wireshark.enable = true;
 
   # List services that you want to enable:
 
