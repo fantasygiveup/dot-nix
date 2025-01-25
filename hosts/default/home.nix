@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,7 +24,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    (pkgs.callPackage ./fdir.nix { })
+    (pkgs.callPackage ../../modules/nixos/fdir.nix { })
     (pkgs.google-cloud-sdk.withExtraComponents
       [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     pkgs-unstable.elixir
@@ -129,174 +129,15 @@
     pkgs.zotero # citation tool
   ];
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Numix-Square";
-      package = pkgs.numix-icon-theme-square;
-    };
-  };
+  imports = [
+    ../../modules/home-manager/config.nix
+    ../../modules/home-manager/yarr-service.nix
+    ../../modules/home-manager/clipboard-history-service.nix
+  ];
 
-  # NOTE: to see changes using gnome-tweaks (or any other method) use `dconf watch /` command.
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        text-scaling-factor = 1.25;
-        font-name = "Ubuntu Medium 11";
-        document-font-name = "Ubuntu Regular 11";
-        monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
-        font-antialiasing = "rgba";
-        font-hinting = "slight";
-        clock-show-weekday = true;
-        enable-hot-corners = false; # disable top-left hot corner.
-      };
-      "org/gnome/desktop/input-sources" = {
-        sources = [
-          (lib.gvariant.mkTuple [ "xkb" "us" ])
-          (lib.gvariant.mkTuple [ "xkb" "ua" ])
-        ];
-        xkb-options =
-          [ "terminate:ctrl_alt_bksp" "caps:ctrl_modifier" ]; # use caps as ctrl
-      };
-      "org/gnome/desktop/wm/keybindings" = { show-desktop = [ "<Super>d" ]; };
-      "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-        ];
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
-        {
-          binding = "<Control><Alt>h";
-          command = "bemenu-commander cliphist";
-          name = "Clipboard History";
-        };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
-        {
-          binding = "<Control><Alt>u";
-          command = "bemenu-commander ref";
-          name = "Ref";
-        };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" =
-        {
-          binding = "<Control><Alt>i";
-          command = "bemenu-commander ref-data";
-          name = "Ref-Data";
-        };
-      "org/gnome/settings-daemon/plugins/color" = {
-        night-light-enabled = true;
-        night-light-temperature = (lib.gvariant.mkUint32 3700);
-      };
+  home.file = { };
 
-      "org/gnome/shell" = {
-        enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" ];
-        last-selected-power-profile = "performance";
-      };
-      "org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-ac-timeout = 900; # 15min
-        sleep-inactive-ac-type = "suspend";
-      };
-      "org/gnome/desktop/session" = {
-        idle-delay = (lib.gvariant.mkUint32 300); # 5min
-      };
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        apply-custom-theme = false;
-        dock-position = "BOTTOM";
-        transparency-mode = "FIXED";
-        background-opacity = 1.0;
-        height-fraction = 1.0;
-        dash-max-icon-size = 36;
-        extend-height = true;
-        show-apps-always-in-the-edge = false;
-        dock-fixed = true;
-        custom-theme-shrink = true;
-        custom-background-color = true;
-        isolate-workspaces = true;
-        show-apps-at-top = true;
-        background-color = "rgb(0,0,0)";
-        running-indicator-style = "DOTS";
-      };
-    };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
-  };
-
-  xresources.properties = {
-    "Xft.lcdfilter" = "lcddefault";
-    "Xft.hintstyle" = "hintslight";
-    "Xft.hinting" = true;
-    "Xft.antialias" = true;
-    "Xft.rgba" = "rgb";
-  };
-
-  systemd.user.services.cliphist-store = {
-    Unit = {
-      Description =
-        "X11 service. Listen to clipboard events and pipe them to cliphist.";
-    };
-    Service = {
-      ExecStart = ''
-        ${pkgs.bash}/bin/bash -c 'while ${pkgs.clipnotify}/bin/clipnotify; do ${pkgs.xclip}/bin/xclip -o -selection c | ${pkgs.cliphist}/bin/cliphist store; done'
-      '';
-      Restart = "always";
-      TimeoutSec = 3;
-      RestartSec = 3;
-    };
-    Install = { WantedBy = [ "default.target" ]; };
-  };
-
-  systemd.user.services.yarr = {
-    Unit = {
-      Description =
-        "RSS / Atom viewer HTTP service, running on localhost port 7070";
-    };
-    Service = {
-      ExecStart = ''
-        ${pkgs.yarr}/bin/yarr
-      '';
-      Restart = "always";
-    };
-    Install = { WantedBy = [ "default.target" ]; };
-  };
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/idanko/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "nvim";
-  };
+  home.sessionVariables = { };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
