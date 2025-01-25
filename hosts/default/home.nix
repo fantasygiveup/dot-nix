@@ -121,6 +121,7 @@
     pkgs.wl-clipboard
     pkgs.xcape
     pkgs.xclip
+    pkgs.xorg.xev
     pkgs.xorg.xhost # execute `xhost +` to share clipboard between a docker container and host machine
     pkgs.xorg.xmodmap
     pkgs.yarn
