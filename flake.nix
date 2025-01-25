@@ -9,6 +9,8 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
@@ -23,6 +25,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/default/configuration.nix
+          ./modules/nixos/minecraft-mod-server.nix
           inputs.home-manager.nixosModules.default
           {
             home-manager.extraSpecialArgs = { pkgs-unstable = pkgs-unstable; };
