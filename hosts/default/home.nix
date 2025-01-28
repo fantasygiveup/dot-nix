@@ -85,6 +85,7 @@
     pkgs.memtester # memory test
     pkgs.mpv
     pkgs.ngrok # route tcp from the public internet url to your host machine
+    pkgs.nix-index # for nix-locate
     pkgs.nixd
     pkgs.nixfmt-classic
     pkgs.nodePackages.eslint # javascript linter
