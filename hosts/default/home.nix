@@ -91,7 +91,6 @@
     pkgs.nodePackages.typescript-language-server # typescript language server protocol
     pkgs.nodejs
     pkgs.obs-studio # record camera and desktop
-    pkgs.obsidian
     pkgs.opera
     pkgs.papirus-icon-theme
     pkgs.pgformatter
