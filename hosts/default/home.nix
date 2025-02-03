@@ -129,7 +129,7 @@
   ];
 
   imports = [
-    ../../modules/home-manager/config.nix
+    ../../modules/home-manager/app-settings.nix
     ../../modules/home-manager/yarr-service.nix
     ../../modules/home-manager/clipboard-history-service.nix
   ];
