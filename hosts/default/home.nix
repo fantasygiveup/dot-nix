@@ -78,6 +78,7 @@
     pkgs.libxml2 # xmllint
     pkgs.lua-language-server
     pkgs.luajit # lua interpreter
+    pkgs.luarocks
     pkgs.meld # diff folders and files
     pkgs.memtester # memory test
     pkgs.mpv
@@ -122,6 +123,7 @@
     pkgs.xorg.xev
     pkgs.xorg.xhost # execute `xhost +` to share clipboard between a docker container and host machine
     pkgs.xorg.xmodmap
+    pkgs.yapf
     pkgs.yarn
     pkgs.zk # zettelkasten cli
     pkgs.zotero # citation tool
