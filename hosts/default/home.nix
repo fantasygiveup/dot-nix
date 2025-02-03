@@ -117,7 +117,6 @@
     pkgs.vscode-langservers-extracted # cssls
     pkgs.wezterm
     pkgs.wireshark
-    pkgs.wl-clipboard
     pkgs.xcape
     pkgs.xclip
     pkgs.xorg.xev
