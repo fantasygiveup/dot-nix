@@ -40,7 +40,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/Kyiv";
+  time.timeZone = "Europe/Warsaw";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
