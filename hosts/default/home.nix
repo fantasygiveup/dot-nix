@@ -50,7 +50,7 @@
     pkgs.discord
     pkgs.dive # inspect docker images
     pkgs.docker-compose
-    pkgs.emacs-gtk
+    pkgs.emacs30-pgtk
     pkgs.emmet-ls
     pkgs.espeak # speach-module for speechd
     pkgs.filezilla
