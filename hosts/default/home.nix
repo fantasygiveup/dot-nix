@@ -1,6 +1,6 @@
 { pkgs, pkgs-unstable, ... }:
 
-{
+rec {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "idanko";
@@ -138,7 +138,11 @@
 
   home.file = { };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    # Fix the libsqlite.so not found issue for https://github.com/kkharji/sqlite.lua.
+    LD_LIBRARY_PATH =
+      "${pkgs.lib.makeLibraryPath (with pkgs; [ sqlite ])}:$LD_LIBRARY_PATH";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
