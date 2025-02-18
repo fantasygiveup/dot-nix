@@ -26,8 +26,6 @@ rec {
       (pkgs.callPackage ../../modules/nixos/fdir.nix { })
       (pkgs.google-cloud-sdk.withExtraComponents
         [ pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-      # pkgs-unstable.elixir
-      # pkgs-unstable.elixir-ls
       pkgs-unstable.neovim
       pkgs-unstable.qbittorrent
       pkgs-unstable.signal-desktop
@@ -66,6 +64,7 @@ rec {
       pkgs.gopls # golang language server protocol
       pkgs.gotools # set of go language code tools
       pkgs.graphviz
+      pkgs.imagemagick
       pkgs.imv # image viewer
       pkgs.inkscape
       pkgs.krita
@@ -89,7 +88,7 @@ rec {
       pkgs.nodePackages.prettier # javascript formatter
       pkgs.nodePackages.pyright # python code formatter
       pkgs.nodePackages.typescript-language-server # typescript language server protocol
-      # pkgs.nodejs
+      pkgs.nodejs
       pkgs.obs-studio # record camera and desktop
       pkgs.opera
       pkgs.papirus-icon-theme
