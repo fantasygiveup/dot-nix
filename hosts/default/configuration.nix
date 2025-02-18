@@ -333,6 +333,9 @@
   system.autoUpgrade.enable = false;
   programs.wireshark.enable = true;
 
+  # To make the linker (ldd) works with the not nix native binaries.
+  programs.nix-ld.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
