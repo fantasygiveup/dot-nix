@@ -5,7 +5,7 @@ with lib.gvariant; {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        text-scaling-factor = 1.5;
+        text-scaling-factor = 1.25;
         font-name = "Ubuntu Medium 11";
         document-font-name = "Ubuntu Regular 11";
         monospace-font-name = "JetBrainsMono Nerd Font Mono 11";
@@ -38,11 +38,11 @@ with lib.gvariant; {
       };
       "org/gnome/shell/extensions/dash-to-dock" = {
         apply-custom-theme = false;
-        dock-position = "LEFT";
+        dock-position = "BOTTOM";
         transparency-mode = "FIXED";
         background-opacity = 1.0;
         height-fraction = 1.0;
-        dash-max-icon-size = 48;
+        dash-max-icon-size = 36;
         extend-height = true;
         show-apps-always-in-the-edge = false;
         dock-fixed = true;
