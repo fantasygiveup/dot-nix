@@ -49,7 +49,6 @@ rec {
       pkgs.discord
       pkgs.dive # inspect docker images
       pkgs.docker-compose
-      pkgs.emacs30-pgtk
       pkgs.emmet-ls
       pkgs.espeak # speach-module for speechd
       pkgs.filezilla
@@ -75,8 +74,6 @@ rec {
       pkgs.lf # terminal file manager
       pkgs.libnotify # provides notify-send
       pkgs.libreoffice-fresh # ms office, but better
-      pkgs.libtool # required by emacs
-      pkgs.libvterm # required by emacs
       pkgs.libxml2 # xmllint
       pkgs.lua-language-server
       pkgs.luajit # lua interpreter
@@ -94,7 +91,6 @@ rec {
       pkgs.nodePackages.typescript-language-server # typescript language server protocol
       # pkgs.nodejs
       pkgs.obs-studio # record camera and desktop
-      pkgs.obsidian
       pkgs.opera
       pkgs.papirus-icon-theme
       pkgs.pgformatter
