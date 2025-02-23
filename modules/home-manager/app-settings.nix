@@ -20,6 +20,31 @@ with lib.gvariant; {
           [ "terminate:ctrl_alt_bksp" "caps:ctrl_modifier" ]; # use caps as ctrl
       };
       "org/gnome/desktop/wm/keybindings" = { show-desktop = [ "<Super>d" ]; };
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        ];
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
+        {
+          binding = "<Control><Alt>h";
+          command = "bemenu-commander cliphist";
+          name = "Clipboard History";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
+        {
+          binding = "<Control><Alt>u";
+          command = "bemenu-commander ref";
+          name = "Ref";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" =
+        {
+          binding = "<Control><Alt>i";
+          command = "bemenu-commander ref-data";
+          name = "Ref-Data";
+        };
       "org/gnome/settings-daemon/plugins/color" = {
         night-light-enabled = true;
         night-light-temperature = (lib.gvariant.mkUint32 3700);
