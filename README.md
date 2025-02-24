@@ -3,6 +3,7 @@ Nixos system configuration
 # Usage
 
 ```bash
-make default # to install default flake
-make purge # to clean up old entries
+make upgrade # upgrades flakes config
+make purge # cleans up the old entries
+make default # installs the default system
 ```
