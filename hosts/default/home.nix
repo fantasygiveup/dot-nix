@@ -13,7 +13,7 @@ rec {
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -53,8 +53,8 @@ rec {
       pkgs.firefox
       pkgs.foliate # awz3 viewer
       pkgs.gimp
-      pkgs.gnome.dconf-editor
-      pkgs.gnome.gnome-tweaks
+      pkgs.dconf-editor
+      pkgs.gnome-tweaks
       pkgs.gnomeExtensions.dash-to-dock
       pkgs.gnomeExtensions.unite # merge title with gnome top dock
       pkgs.go
@@ -86,7 +86,7 @@ rec {
       pkgs.nixfmt-classic
       pkgs.nodePackages.eslint # javascript linter
       pkgs.nodePackages.prettier # javascript formatter
-      pkgs.nodePackages.pyright # python code formatter
+      pkgs.pyright # python code formatter
       pkgs.nodePackages.typescript-language-server # typescript language server protocol
       pkgs.nodejs
       pkgs.obs-studio # record camera and desktop
@@ -126,13 +126,13 @@ rec {
       pkgs.zk # zettelkasten cli
       pkgs.zotero # citation tool
     ] ++ (let
-      erlang_26 = erlangR26.override {
+      erlang_26_1_2 = erlang_26.override {
         version = "26.1.2";
         # nix-prefetch-url --unpack https://github.com/erlang/otp/archive/OTP-26.1.2.tar.gz
         sha256 = "0h7v9py78c66nn56b7xrs7lcah21vixxyw6d4f4p5z7k1rvcn4kv";
       };
 
-      beamPkg = beam.packagesWith erlang_26;
+      beamPkg = beam.packagesWith erlang_26_1_2;
 
       elixir_1_16 = beamPkg.elixir.override {
         version = "1.16.0";
