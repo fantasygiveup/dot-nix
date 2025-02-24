@@ -42,18 +42,19 @@ rec {
       pkgs.clipnotify
       pkgs.cmake
       pkgs.dconf
+      pkgs.dconf-editor
       pkgs.delve # golang debugger
       pkgs.devcontainer
       pkgs.discord
       pkgs.dive # inspect docker images
       pkgs.docker-compose
+      pkgs.drawio
       pkgs.emmet-ls
       pkgs.espeak # speach-module for speechd
       pkgs.filezilla
       pkgs.firefox
       pkgs.foliate # awz3 viewer
       pkgs.gimp
-      pkgs.dconf-editor
       pkgs.gnome-tweaks
       pkgs.gnomeExtensions.dash-to-dock
       pkgs.gnomeExtensions.unite # merge title with gnome top dock
@@ -86,7 +87,6 @@ rec {
       pkgs.nixfmt-classic
       pkgs.nodePackages.eslint # javascript linter
       pkgs.nodePackages.prettier # javascript formatter
-      pkgs.pyright # python code formatter
       pkgs.nodePackages.typescript-language-server # typescript language server protocol
       pkgs.nodejs
       pkgs.obs-studio # record camera and desktop
@@ -96,6 +96,7 @@ rec {
       pkgs.pistol # file previewer written in go
       pkgs.pkgs.pandoc # convert/generate documents in different formats
       pkgs.prismlauncher # minecraft launcher
+      pkgs.pyright # python code formatter
       pkgs.rlwrap # wrap a command to make stdin interactive
       pkgs.sbcl
       pkgs.shfmt # shell files formatter
