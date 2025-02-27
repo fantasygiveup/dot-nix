@@ -53,6 +53,16 @@ with lib.gvariant; {
       "org/gnome/shell" = {
         enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" ];
         last-selected-power-profile = "performance";
+        favorite-apps = [
+          "org.gnome.Nautilus.desktop"
+          "thunderbird.desktop"
+          "google-chrome.desktop"
+          "org.wezfurlong.wezterm.desktop"
+          "slack.desktop"
+          "teams-for-linux.desktop"
+          "com.github.johnfactotum.Foliate.desktop"
+          "anki.desktop"
+        ];
       };
       "org/gnome/settings-daemon/plugins/power" = {
         sleep-inactive-ac-timeout = 900; # 15min
@@ -77,6 +87,10 @@ with lib.gvariant; {
         show-apps-at-top = true;
         background-color = "rgb(0,0,0)";
         running-indicator-style = "DOTS";
+        always-center-icons = true;
+      };
+      "org/gnome/nautilus/preferences" = {
+        default-folder-viewer = "list-view";
       };
     };
   };
